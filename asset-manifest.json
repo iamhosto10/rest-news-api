@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/rest-news-api/static/css/main.e6c13ad2.css",
+    "main.js": "/rest-news-api/static/js/main.eb55f5bd.js",
+    "index.html": "/rest-news-api/index.html",
+    "main.e6c13ad2.css.map": "/rest-news-api/static/css/main.e6c13ad2.css.map",
+    "main.eb55f5bd.js.map": "/rest-news-api/static/js/main.eb55f5bd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.eb55f5bd.js"
+  ]
+}
