@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect, createContext, useContext } from "react";
+import React, { useState, useEffect, createContext, useContext } from "react";
 
 export const Newscontext = createContext();
 
@@ -14,12 +14,13 @@ export const Newsprovider = ({ children }) => {
   useEffect(() => {
     const restAPI = async () => {
       console.log("entro a la api");
+      // const apikey = process.env.REACT_APP_API_KEY;
       // const url = `https://newsapi.org/v2/top-headlines?country=co&categoria=${categoria}&apiKey=
       //  ${import.meta.env.API_KEY}
       // `;
       const url = `https://newsapi.org/v2/top-headlines?country=co&category=${categoria}&apiKey=392e19d2ce964e69b37a9656cb015ecf`;
       const { data } = await axios(url);
-      console.log(data.articles, url);
+      console.log(process.env.REACT_APP_API_KEY);
       setNews(data.articles);
     };
     restAPI();

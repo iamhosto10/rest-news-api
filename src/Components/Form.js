@@ -11,13 +11,13 @@ import { useNews } from "../Contexts/Newsprovider";
 function Form() {
   const { categoria, handlechange } = useNews();
   const CATEGORÍAS = [
-    { value: "general", label: "general" },
-    { value: "bussiness", label: "bussiness" },
-    { value: "enterteiment", label: "enterteiment" },
-    { value: "health", label: "health" },
-    { value: "science", label: "science" },
-    { value: "sports", label: "sports" },
-    { value: "technology", label: "technology" },
+    { value: "general", label: "General" },
+    { value: "bussiness", label: "Bussiness" },
+    { value: "enterteiment", label: "Enterteiment" },
+    { value: "health", label: "Health" },
+    { value: "science", label: "Science" },
+    { value: "sports", label: "Sports" },
+    { value: "technology", label: "Technology" },
   ];
   return (
     <form>
