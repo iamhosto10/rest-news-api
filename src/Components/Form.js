@@ -9,7 +9,7 @@ import {
 import { useNews } from "../Contexts/Newsprovider";
 
 function Form() {
-  const { categoria, handlechange } = useNews();
+  const { categoria, handlechange, pais, handlechangepais } = useNews();
   const CATEGORÍAS = [
     { value: "general", label: "General" },
     { value: "bussiness", label: "Bussiness" },
@@ -22,6 +22,11 @@ function Form() {
   const Paises = [
     { value: "co", label: "Colombia" },
     { value: "mx", label: "Mexico" },
+    { value: "us", label: "Estados Unidos" },
+    { value: "ve", label: "Venezuela" },
+    { value: "au", label: "Australia" },
+    { value: "fr", label: "Francia" },
+    { value: "gb", label: "Gran bretaña" },
   ];
   return (
     <form>
@@ -42,7 +47,7 @@ function Form() {
       </FormControl>
       <FormControl fullWidth sx={{ marginTop: 2 }}>
         <InputLabel>Paises</InputLabel>
-        <Select value={"co"} onChange={handlechange} label="Categoría">
+        <Select value={pais} onChange={handlechangepais} label="Countries">
           {Paises.map((categorias) => (
             <MenuItem key={categorias.value} value={categorias.value}>
               {categorias.label}
@@ -51,7 +56,7 @@ function Form() {
         </Select>
         <Box sx={{ marginTop: 2 }}>
           <Button fullWidth variant="contained">
-            Search Caregory
+            Search Country
           </Button>
         </Box>
       </FormControl>

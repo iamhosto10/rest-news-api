@@ -5,12 +5,17 @@ export const Newscontext = createContext();
 
 export const Newsprovider = ({ children }) => {
   const [categoria, setCategoria] = useState("general");
+  const [pais,setPais] = useState("co");
   const [news, setNews] = useState(null);
 
   const handlechange = (e) => {
     console.log("entro", e.target.value);
     setCategoria(e.target.value);
   };
+  const handlechangepais = (e) =>{
+    console.log("entro a pais", e.target.value);
+    setPais(e.target.value);
+  }
   useEffect(() => {
     const restAPI = async () => {
       console.log("entro a la api");
@@ -20,7 +25,7 @@ export const Newsprovider = ({ children }) => {
       //  ${import.meta.env.API_KEY}
       // `;
       // const url = `https://newsapi.org/v2/top-headlines?country=co&category=${categoria}&apiKey=392e19d2ce964e69b37a9656cb015ecf`;
-      const url = `https://newsapi.org/v2/top-headlines?country=co&category=${categoria}&apiKey=${apikey}`;
+      const url = `https://newsapi.org/v2/top-headlines?country=${pais}&category=${categoria}&apiKey=${apikey}`;
       console.log(url, "apikey");
       try {
         const { data } = await axios.get(url);
@@ -31,10 +36,10 @@ export const Newsprovider = ({ children }) => {
       }
     };
     restAPI();
-  }, [categoria]);
+  }, [categoria, pais]);
 
   return (
-    <Newscontext.Provider value={{ categoria, handlechange, news }}>
+    <Newscontext.Provider value={{ categoria, handlechange, news, pais, handlechangepais }}>
       {children}
     </Newscontext.Provider>
   );
